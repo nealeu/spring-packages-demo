@@ -8,6 +8,7 @@ env:
 
 build:
   ci:
+    - source /etc/drydock/.env
     - env
     - ./gradlew build
 
