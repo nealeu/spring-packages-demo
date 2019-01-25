@@ -1,0 +1,34 @@
+language: java
+
+jdk:
+   - openjdk11
+
+env:
+  global:
+
+build:
+  ci:
+    - env
+    - ./gradlew build
+
+  post_ci:
+    # - command1
+
+  on_success:
+    - cp -R build/test-results/test/* shippable/testresults
+
+  on_failure:
+    - cp -R build/test-results/test/* shippable/testresults
+
+integrations:
+  notifications:
+    - integrationName: slack
+      type: slack
+      recipients:
+        - "#shippable-builds"
+#      branches:
+#        only:
+#          - master
+#          - dev
+      on_success: change
+      on_failure: always
