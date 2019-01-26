@@ -1,0 +1,13 @@
+
+# Run with -Dspring.security.user.name=some-username -Dspring.security.user.password=some-password
+# to use the authentication below
+GET http://localhost:8080/packages
+Accept: application/json
+Authorization: Basic c29tZS11c2VybmFtZTpzb21lLXBhc3N3b3Jk
+
+
+###
+GET http://localhost:8080/actuator/health
+Accept: application/json
+
+###
