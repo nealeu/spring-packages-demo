@@ -7,5 +7,5 @@ class ProductPackage {
     private final long id;
     private final String name;
     private final String description;
-
+    private final LineItem[] products;
 }
